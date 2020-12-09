@@ -16,13 +16,6 @@
                 TextColor="Black"
                 BackgroundColor="Transparent"
                 Text="Share" />
-        <Button x:Name="ImageButtonShare"
-                Clicked="ImageShare_Clicked"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="Center"
-                TextColor="Black"
-                BackgroundColor="Transparent"
-                Text="Share Image" />
     </StackLayout>
 
 </ContentPage>
