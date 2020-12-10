@@ -35,11 +35,8 @@ namespace MMSSender
                     stream.CopyTo(fileStream);
                 }
 
-                await Share.RequestAsync(new ShareTextRequest
-                {
-                    Text = EntryShare.Text,
-                    Title = "Share!"
-                });
+                var message = new SmsMessage("Test", "0415055492");
+                await Sms.ComposeAsync(message);
 
                 await Share.RequestAsync(new ShareFileRequest
                 {
