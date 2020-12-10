@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.IO;
 
 namespace MMSSender
@@ -13,17 +18,7 @@ namespace MMSSender
         {
             InitializeComponent();
         }
-
         private async void ButtonShare_Clicked(object sender, EventArgs e)
-        {
-            await Share.RequestAsync(new ShareTextRequest
-            {
-                Text = EntryShare.Text,
-                Title = "Share!"
-            }) ;
-        }
-
-        private async void ImageShare_Clicked(object sender, EventArgs e)
         {
 
             await Task.Run(async () => {
@@ -40,6 +35,12 @@ namespace MMSSender
                     stream.CopyTo(fileStream);
                 }
 
+                await Share.RequestAsync(new ShareTextRequest
+                {
+                    Text = EntryShare.Text,
+                    Title = "Share!"
+                });
+
                 await Share.RequestAsync(new ShareFileRequest
                 {
                     File = new ShareFile(tempFile)
@@ -47,7 +48,9 @@ namespace MMSSender
                 }); ;
 
                 File.Delete(path: tempFile);
+
             });
+
         }
     }
 }

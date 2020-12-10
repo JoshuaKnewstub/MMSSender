@@ -3,23 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MMSSender.MainPage">
 
-    <StackLayout 
-        VerticalOptions="Center" 
-        HorizontalOptions="Center">
-        
+    <StackLayout>
         <Entry Text=""
                Placeholder="Enter Text Here..."
-               x:Name="EntryShare" />
-        
+               x:Name="EntryShare"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" />
         <Button x:Name="ButtonShare"
                 Clicked="ButtonShare_Clicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
                 TextColor="Black"
+                BackgroundColor="Transparent"
                 Text="Share" />
-        
-        <Button x:Name="ImageButtonShare"
-                Clicked="ImageShare_Clicked"
-                TextColor="Black"
-                Text="Share Image" />
     </StackLayout>
 
 </ContentPage>
